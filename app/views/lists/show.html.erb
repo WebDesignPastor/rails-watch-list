@@ -3,6 +3,8 @@
 <h3><%= movie.title %></h3>
 <p><%= movie.overview %></p>
 <%= movie.poster_url %>
+<%= image_tag(movie.poster_url,
+      width: 200, crop: :fill) %>
 <% bookmark = Bookmark.find_by(movie: movie, list: @list) %>
 <p><%= bookmark.comment %></p>
 <p><%= link_to 'delete this movie', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}  %></p>
