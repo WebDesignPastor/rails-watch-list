@@ -3,7 +3,7 @@
 <h3><%= movie.title %></h3>
 <p><%= movie.overview %></p>
 <%= movie.poster_url %>
-<%= cl_image_tag("fz21gvbypjf2eshj6fxe",
+<%= cl_image_tag(movie.poster_url,
       width: 400, crop: :fill) %>
 <% bookmark = Bookmark.find_by(movie: movie, list: @list) %>
 <p><%= bookmark.comment %></p>
